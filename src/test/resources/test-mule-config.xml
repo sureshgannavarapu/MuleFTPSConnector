@@ -1,0 +1,19 @@
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:qd-ftps="http://www.mulesoft.org/schema/mule/qd-ftps"
+      xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+          http://www.mulesoft.org/schema/mule/qd-ftps http://www.mulesoft.org/schema/mule/qd-ftps/current/mule-qd-ftps.xsd">
+
+    <qd-ftps:config name="config" configId="configId">
+        <qd-ftps:connection requiredParameter="aValue" />
+    </qd-ftps:config>
+
+    <flow name="sayHiFlow">
+        <qd-ftps:say-hi person="Mariano Gonzalez"/>
+    </flow>
+
+    <flow name="retrieveInfoFlow">
+        <qd-ftps:retrieve-info config-ref="config"/>
+    </flow>
+
+</mule>
